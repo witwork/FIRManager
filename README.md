@@ -1,3 +1,3 @@
 # FIRManager
 
-Profile: https://codecanyon.net/author_dashboard
+Profile: https://codecanyon.net/user/witworkapp/portfolio
