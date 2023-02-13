@@ -61,8 +61,8 @@ static NSString * const kCreateAt               =               @"createAt";
     return [FIRAuth auth].currentUser;
 }
 #pragma mark - FIRESTORE
--(void)updateBandwidth:(NSInteger)upload
-              download:(NSInteger)download
+-(void)updateBandwidth:(UInt64)upload
+              download:(UInt64)download
             completion:(void(^)(NSError * _Nullable))completion {
     
     NSDictionary *data = @{

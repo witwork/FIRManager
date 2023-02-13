@@ -6,28 +6,29 @@ import PackageDescription
 let package = Package(
     name: "FIRManager",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v11),
     ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "FIRManager",
-            targets: ["FIRManager"]),
+        .library(name: "FIRManager", targets: ["FIRManagerTarget"])
     ],
     dependencies: [
         .package( url: "https://github.com/lmirosevic/GBDeviceInfo.git", branch: "master"),
-        .package( url: "https://github.com/firebase/firebase-ios-sdk.git", branch: "master"),
+        .package(name: "Firebase", url: "https://github.com/firebase/firebase-ios-sdk.git", branch: "master"),
         .package( url: "https://github.com/google/GoogleSignIn-iOS.git", branch: "main")
-       
     ],
     targets: [
         .target(
-            name: "FIRManager",
+            name: "FIRManagerTarget",
             dependencies: [
+                .product(name: "FirebaseAuth", package: "Firebase"),
+                .product(name: "FirebaseCore", package: "Firebase"),
+                .product(name: "FirebaseFirestore", package: "Firebase"),
+                .product(name: "GoogleSignIn", package: "GoogleSignIn-iOS"),
+                .product(name: "GBDeviceInfo", package: "GBDeviceInfo")
             ],
             path: "FIRManager",
             sources: ["FIRManager.m"],
-            publicHeadersPath: ""
+            publicHeadersPath: "."
         ),
         
     ]

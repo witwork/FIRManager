@@ -30,7 +30,7 @@
 -(void)updatePremium:(NSString *_Nonnull)productId completion:(void(^_Nullable)(NSError * _Nullable))completion;
 -(void)fetchPackage:(void(^_Nullable)(FIRQuerySnapshot * _Nullable,NSError * _Nullable))completion;
 -(void)fetchServers:(void(^_Nullable)(FIRQuerySnapshot * _Nullable,NSError * _Nullable))completion;
--(void)updateBandwidth:(NSInteger)upload download:(NSInteger)download completion:(void(^ _Nullable)(NSError * _Nullable))completion;
+-(void)updateBandwidth:(UInt64)upload download:(UInt64)download completion:(void(^ _Nullable)(NSError * _Nullable))completion;
 
 ///AUTH
 -(void)loginApple;
