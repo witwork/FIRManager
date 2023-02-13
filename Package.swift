@@ -17,17 +17,18 @@ let package = Package(
     dependencies: [
         .package( url: "https://github.com/lmirosevic/GBDeviceInfo.git", branch: "master"),
         .package( url: "https://github.com/firebase/firebase-ios-sdk.git", branch: "master"),
-        .package( url: "https://github.com/google/GoogleSignIn-iOS.git", branch: "master")
+        .package( url: "https://github.com/google/GoogleSignIn-iOS.git", branch: "main")
        
     ],
     targets: [
         .target(
             name: "FIRManager",
             dependencies: [
-                "FirebaseAuth",
-                "FirebaseFirestore",
-                "FirebaseCore"
-            ]),
+            ],
+            path: "FIRManager",
+            sources: ["FIRManager.m"],
+            publicHeadersPath: ""
+        ),
         
     ]
 )
